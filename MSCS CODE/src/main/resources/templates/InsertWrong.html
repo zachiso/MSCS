@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ERROR</title>
+</head>
+
+<script>
+    function goBack(){
+        window.history.back()
+    }
+</script>
+
+<body>
+<h1 th:inline="text">error:请插入有效数据</h1>
+<input type="button" value="返回" onclick="goBack()">
+
+</body>
+</html>

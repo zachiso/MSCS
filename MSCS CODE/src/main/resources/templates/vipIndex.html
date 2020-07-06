@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>新增会员</title>
+</head>
+
+<body>
+<h1 th:inline="text">新增会员</h1>
+<form id="iform" th:action="@{/vip/insert}" th:method="post" th:object="${vip}">
+    <label>会员姓名</label>
+    <input type="text" th:field = "*{name}"/>
+    <label>会员卡号</label>
+    <input type="text" th:field = "*{id}"/>
+    <label>会员联系方式</label>
+    <input type="text" th:field = "*{ph}"/>
+    <input th:label="提交" type="submit"/>
+</form>
+</body>
+
+</html>

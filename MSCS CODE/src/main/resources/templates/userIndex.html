@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>新增用户</title>
+</head>
+
+<body>
+<h1 th:inline="text">新增用户</h1>
+<form id="iform" th:action="@{/user/insert}" th:method="post" th:object="${user}">
+    <label>用户姓名</label>
+    <input type="text" th:field = "*{username}"/>
+    <label>用户ID</label>
+    <input type="text" th:field = "*{id}"/>
+    <label>用户密码</label>
+    <input type="text" th:field = "*{pwd}"/>
+    <label>用户备注</label>
+    <input type="text" th:field = "*{cha}"/>
+    <input th:label="提交" type="submit"/>
+</form>
+
+</body>
+</html>

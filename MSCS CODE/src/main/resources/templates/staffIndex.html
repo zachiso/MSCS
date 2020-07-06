@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>新增员工</title>
+</head>
+
+<body>
+<h1 th:inline="text">新增员工</h1>
+<form id="iform" th:action="@{/staff/insert}" th:method="post" th:object="${staff}">
+    <label>员工姓名</label>
+    <input type="text" th:field = "*{name}"/>
+    <label>员工编号</label>
+    <input type="text" th:field = "*{id}"/>
+    <label>员工性别</label>
+    <input type="text" th:field = "*{gender}"/>
+    <label>员工联系方式</label>
+    <input type="text" th:field = "*{ph}"/>
+    <label>员工职位</label>
+    <input type="text" th:field = "*{po}"/>
+    <input th:label="提交" type="submit"/>
+</form>
+
+</body>
+</html>

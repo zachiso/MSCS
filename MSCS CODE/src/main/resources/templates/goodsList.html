@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>商品列表</title>
+</head>
+<body>
+<h1 th:inline="text">商品列表</h1>
+<table>
+    <!-- 名称 -->
+    <thead>
+    <tr>
+        <th >商品序号</th>
+        <th >商品编号</th>
+        <th >商品名</th>
+        <th >商品价格</th>
+        <th >商品种类</th>
+        <th >操作</th>
+    </tr>
+
+    </thead>
+    <!-- 动态插入内容 -->
+    <tbody>
+    <tr th:each="s: ${goodsList}" >
+        <td th:text=" ${sStat.index + 1}"></td>
+        <td th:text=" ${s.getId()}"></td>
+        　　<td th:text=" ${s.getName()}"></td>
+        　　<td th:text=" ${s.getPri()}"></td>
+        　　<td th:text=" ${s.getType()}"></td>
+        <td>
+            <a th:href="@{/goods/update (id = ${s.getId()})}" >修改</a>
+
+            <a th:href="@{/goods/delete (id = ${s.getId()})}" >删除</a>
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

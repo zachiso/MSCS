@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>用户列表</title>
+</head>
+<body>
+<h1 th:inline="text">用户列表</h1>
+<table>
+    <!-- 名称 -->
+    <thead>
+    <tr>
+        <th >用户序号</th>
+        <th >用户编号</th>
+        <th >用户姓名</th>
+        <th >用户密码</th>
+        <th >用户备注</th>
+        <th >操作</th>
+    </tr>
+
+    </thead>
+    <!-- 动态插入内容 -->
+    <tbody>
+    <tr th:each="s: ${userList}" >
+        <td th:text=" ${sStat.index + 1}"></td>
+        <td th:text=" ${s.getId()}"></td>
+        　　<td th:text=" ${s.getUsername()}"></td>
+        　　<td th:text=" ${s.getPwd()}"></td>
+        　　<td th:text=" ${s.getCha()}"></td>
+        <td>
+            <a th:href="@{/user/update (id = ${s.getId()})}" >修改</a>
+
+            <a th:href="@{/user/delete (id = ${s.getId()})}" >删除</a>
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
