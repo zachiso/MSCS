@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>VipList</title>
+    <title>会员列表</title>
+
 </head>
 <body>
-<h1 th:inline="text">Vip</h1>
+<h1 th:inline="text">会员列表</h1>
 <table>
     <!-- 名称 -->
     <thead>
     <tr>
-        <th >会员序号</th>
-        <th >会员卡号</th>
+        <th >序号</th>
         <th >会员姓名</th>
+        <th >会员卡号</th>
         <th >会员联系方式</th>
         <th >操作</th>
     </tr>
@@ -21,17 +22,23 @@
     <tbody>
     <tr th:each="s: ${vipList}" >
         <td th:text=" ${sStat.index + 1}"></td>
-        <td th:text=" ${s.getId()}"></td>
-        　　<td th:text=" ${s.getName()}"></td>
-        　　<td th:text=" ${s.getPh()}"></td>
+        <td th:text=" ${s.getName()}"></td>
+        <td th:text=" ${s.getId()}"></td>　
+        <td th:text=" ${s.getPh()}"></td>
         <td>
             <a th:href="@{/vip/update (id = ${s.getId()})}" >修改</a>
 
             <a th:href="@{/vip/delete (id = ${s.getId()})}" >删除</a>
-
         </td>
     </tr>
     </tbody>
 </table>
+
+<form class="form-signin" th:action = "@{/vip/index}">
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">新增</button>
+</form>
+
+
 </body>
 </html>

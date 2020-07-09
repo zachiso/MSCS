@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Signin Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/signin.css}" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+
+<form class="form-signin" th:action = "@{/goods/getAllGoods}">
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">商品管理</button>
+</form>
+
+<form class="form-signin" th:action = "@{/vip/getAllVip}">
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">会员管理</button>
+</form>
+
+<script>
+    function goBack(){
+        window.history.back()
+    }
+</script>
+
+<input type="button" value="返回" onclick="goBack()">
+
+</body>
+
+</html>

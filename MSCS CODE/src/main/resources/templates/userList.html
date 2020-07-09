@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>用户列表</title>
+
 </head>
 <body>
 <h1 th:inline="text">用户列表</h1>
@@ -9,8 +10,7 @@
     <!-- 名称 -->
     <thead>
     <tr>
-        <th >用户序号</th>
-        <th >用户编号</th>
+        <th >序号</th>
         <th >用户姓名</th>
         <th >用户密码</th>
         <th >用户备注</th>
@@ -22,7 +22,6 @@
     <tbody>
     <tr th:each="s: ${userList}" >
         <td th:text=" ${sStat.index + 1}"></td>
-        <td th:text=" ${s.getId()}"></td>
         　　<td th:text=" ${s.getUsername()}"></td>
         　　<td th:text=" ${s.getPwd()}"></td>
         　　<td th:text=" ${s.getCha()}"></td>
@@ -35,5 +34,18 @@
     </tr>
     </tbody>
 </table>
+
+<form class="form-signin" th:action = "@{/user/index}">
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">新增</button>
+</form>
+
+<script>
+    function goBack(){
+        window.history.back()
+    }
+</script>
+
+
 </body>
 </html>

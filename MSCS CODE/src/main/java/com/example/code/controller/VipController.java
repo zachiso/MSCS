@@ -1,5 +1,6 @@
 package com.example.code.controller;
 
+import com.example.code.entity.User;
 import com.example.code.entity.Vip;
 import com.example.code.service.VipService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +24,14 @@ public class VipController {
     }
 
     @PostMapping("/vip/insert")
-    public String insert(@ModelAttribute("vip") Vip vip){
-        if(vip.getName() == "" || vip.getPh() == ""){
-            return "InsertWrong";
-        }else{
-            vipService.insert(vip);
-            return "redirect:/vip/getAllVip";
-        }
+    public String insert(@RequestParam("na") String na,
+                         @RequestParam("ph") String ph){
+        Vip vip = new Vip();
+        vip.setName(na);
+        vip.setPh(ph);
+        vipService.insert(vip);
+        return "redirect:/vip/getAllVip";
+
 
     }
 

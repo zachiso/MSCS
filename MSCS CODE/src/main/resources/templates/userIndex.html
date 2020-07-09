@@ -4,19 +4,26 @@
 
 <head>
     <title>新增用户</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Signin Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/signin.css}" rel="stylesheet">
 </head>
 
 <body>
-<h1 th:inline="text">新增用户</h1>
+
 <form id="iform" th:action="@{/user/insert}" th:method="post" th:object="${user}">
-    <label>用户姓名</label>
-    <input type="text" th:field = "*{username}"/>
-    <label>用户ID</label>
-    <input type="text" th:field = "*{id}"/>
-    <label>用户密码</label>
-    <input type="text" th:field = "*{pwd}"/>
-    <label>用户备注</label>
-    <input type="text" th:field = "*{cha}"/>
+
+    <input type="text" name = "na" class="form-control" placeholder="用户姓名" required="" autofocus="">
+    <input type="text" name = "pwd" class="form-control" placeholder="用户密码" required="">
+    <input type="text" name = "cha" class="form-control" placeholder="用户备注" required="">
+
+
     <input th:label="提交" type="submit"/>
 </form>
 

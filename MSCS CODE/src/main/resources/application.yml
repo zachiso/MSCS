@@ -10,6 +10,7 @@ spring:
     suffix: .html
     mode: LEGACYHTML5
     encoding: UTF-8
+    cache: false
 
   freemarker:
     cache: false
@@ -17,3 +18,4 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+

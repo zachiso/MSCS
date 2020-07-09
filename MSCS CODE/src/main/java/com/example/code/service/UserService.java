@@ -10,4 +10,5 @@ public interface UserService {
     void deleteById(Integer id);
     User getUserById(Integer id);
     void updateUser(User user);
+    User getUser(String name, String pwd);
 }

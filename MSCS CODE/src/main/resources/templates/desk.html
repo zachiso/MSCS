@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>商场收银台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Signin Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/signin.css}" rel="stylesheet">
+    </head>
+<body>
+<form class="form-signin" th:action = "@{/com}">
+<select name="type" ><br>
+    <option value="0">非会员</option>
+    <option value="1">会员</option>
+</select><br>
+    会员卡号:<input type="text" size="30" name="vNum"><br>
+    商品编号:<input type="text" size="30" name="id"><br>
+    数量:   <input type="text" size="31" name="num"><br>
+
+    <input type="submit" value="enter"><br>
+
+    <table>
+        <!-- 名称 -->
+        <thead>
+        <tr>
+            <th >商品序号</th>
+            <th >商品名</th>
+            <th >商品编号</th>
+            <th >单价</th>
+        </tr>
+        </thead>
+        <!-- 动态插入内容 -->
+        <tbody>
+        <tr th:each="s: ${goods}" >
+            <td th:text=" ${sStat.index + 1}"></td>
+            <td th:text=" ${s.getName()}"></td>
+            <td th:text=" ${s.getId()}"></td>
+            <td th:text=" ${s.getPri()}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    总价：<input type="text" size="30" name="tol" th:value=" ${result}" readonly><br>
+
+
+</form>
+
+<form action="/desk">
+    <input type="submit" value="comfirm"><br>
+</form>
+
+
+
+
+</body>
+</html>

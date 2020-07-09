@@ -4,19 +4,25 @@
 
 <head>
     <title>新增商品</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Signin Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/signin.css}" rel="stylesheet">
 </head>
 
 <body>
-<h1 th:inline="text">新增商品</h1>
+
 <form id="iform" th:action="@{/goods/insert}" th:method="post" th:object="${goods}">
-    <label>商品名</label>
-    <input type="text" th:field = "*{name}"/>
-    <label>商品编号</label>
-    <input type="text" th:field = "*{id}"/>
-    <label>商品价格</label>
-    <input type="text" th:field = "*{pri}"/>
-    <label>商品种类</label>
-    <input type="text" th:field = "*{type}"/>
+    <label></label>
+    <input type="text" name = "na" class="form-control" placeholder="商品名" required="" autofocus="">
+    <input type="text" name = "pr" class="form-control" placeholder="商品价格" required="">
+    <input type="text" name = "ty" class="form-control" placeholder="商品种类" required="">
+
     <input th:label="提交" type="submit"/>
 </form>
 

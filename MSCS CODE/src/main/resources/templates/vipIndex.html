@@ -4,17 +4,24 @@
 
 <head>
     <title>新增会员</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Signin Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/signin.css}" rel="stylesheet">
 </head>
 
 <body>
-<h1 th:inline="text">新增会员</h1>
+
 <form id="iform" th:action="@{/vip/insert}" th:method="post" th:object="${vip}">
-    <label>会员姓名</label>
-    <input type="text" th:field = "*{name}"/>
-    <label>会员卡号</label>
-    <input type="text" th:field = "*{id}"/>
-    <label>会员联系方式</label>
-    <input type="text" th:field = "*{ph}"/>
+
+    <input type="text" name = "na" class="form-control" placeholder="会员姓名" required="" autofocus="">
+    <input type="text" name = "ph" class="form-control" placeholder="会员联系方式" required="">
+
     <input th:label="提交" type="submit"/>
 </form>
 </body>

@@ -24,14 +24,17 @@ public class StaffController {
     }
 
     @PostMapping("/staff/insert")
-    public String insert(@ModelAttribute("staff") Staff staff){
-        if(staff.getGender() == "" || staff.getName() == "" || staff.getPh() == "" || staff.getPo() == ""){
-            return "InsertWrong";
-        }else{
+    public String insert(@RequestParam("na") String na,
+                         @RequestParam("ge") String ge,
+                         @RequestParam("ph") String ph,
+                         @RequestParam("po") String po){
+            Staff staff = new Staff();
+            staff.setName(na);
+            staff.setPh(ph);
+            staff.setGender(ge);
+            staff.setPo(po);
             staffService.insert(staff);
             return "redirect:/staff/getAllStaff";
-        }
-
     }
 
     @GetMapping("/staff/getAllStaff")
